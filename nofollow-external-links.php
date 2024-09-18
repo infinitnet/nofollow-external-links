@@ -4,6 +4,9 @@
  * Description: Add nofollow attribute to all external links
  * Version: 1.0
  * Author: Infinitnet
+ * Author URI: https://infinitnet.io/
+ * License: GPLv3
+ * Text Domain: nofollow-external-links
  */
 
 if (!defined('ABSPATH')) {
