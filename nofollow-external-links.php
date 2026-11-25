@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Nofollow External Links
  * Description: Add nofollow attribute to all external links
- * Version: 1.0
+ * Version: 1.0.1
  * Author: Infinitnet
  * Author URI: https://infinitnet.io/
  * License: GPLv3
@@ -31,7 +31,7 @@ class External_Link_Nofollow {
 
         $dom = new DOMDocument();
         libxml_use_internal_errors(true);
-        $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+        $dom->loadHTML(mb_encode_numericentity($content, array(0x80, 0x10FFFF, 0, 0x1FFFFF), 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
         libxml_clear_errors();
 
         $links = $dom->getElementsByTagName('a');
